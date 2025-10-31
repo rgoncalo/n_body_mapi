@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore.a CMakeFiles/core.dir/src/core/Body.cpp.o CMakeFiles/core.dir/src/core/PhysicsEngine.cpp.o CMakeFiles/core.dir/src/core/Universe.cpp.o
+/usr/bin/ranlib libcore.a
