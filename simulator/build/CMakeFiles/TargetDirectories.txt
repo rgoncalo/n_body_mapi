@@ -1,4 +1,4 @@
-/home/rgoncalo/n_body/build/CMakeFiles/core.dir
-/home/rgoncalo/n_body/build/CMakeFiles/simulate.dir
-/home/rgoncalo/n_body/build/CMakeFiles/edit_cache.dir
-/home/rgoncalo/n_body/build/CMakeFiles/rebuild_cache.dir
+/home/gr/Desktop/n_body/simulator/build/CMakeFiles/core.dir
+/home/gr/Desktop/n_body/simulator/build/CMakeFiles/simulate.dir
+/home/gr/Desktop/n_body/simulator/build/CMakeFiles/edit_cache.dir
+/home/gr/Desktop/n_body/simulator/build/CMakeFiles/rebuild_cache.dir

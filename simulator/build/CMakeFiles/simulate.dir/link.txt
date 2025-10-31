@@ -1,1 +1,1 @@
-/share/apps/gcc/11.2.0/bin/g++ -O3 -DNDEBUG CMakeFiles/simulate.dir/src/app/simulate.cpp.o CMakeFiles/simulate.dir/src/app/initialConditions.cpp.o CMakeFiles/simulate.dir/src/io/outputWritter.cpp.o -o simulate  libcore.a 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/simulate.dir/src/app/simulate.cpp.o CMakeFiles/simulate.dir/src/app/initialConditions.cpp.o CMakeFiles/simulate.dir/src/io/outputWritter.cpp.o -o simulate  libcore.a 

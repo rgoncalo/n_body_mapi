@@ -93,9 +93,32 @@ std::vector<Body> generateInitialConditions(size_t numberOfBodies) {
         {"Triton", 2.14e22, 3.55e8, 4390}
     };
 
-    for (const auto& m : moons) {
-        bodies.push_back(generateBody(m.name, m.mass, m.distance, m.velocity));
+    for (const auto& moon : moons) {
+        // Find parent planet position
+        Vec3 parentPos{0,0,0};
+        Vec3 parentVel{0,0,0};
+        if (moon.name == "Moon") { parentPos = bodies[3].position; parentVel = bodies[3].velocity; } // Earth
+        else if (moon.name == "Phobos" || moon.name == "Deimos") { parentPos = bodies[4].position; parentVel = bodies[4].velocity; } // Mars
+        else if (moon.name == "Io" || moon.name == "Europa" || moon.name == "Ganymede" || moon.name == "Callisto") { parentPos = bodies[5].position; parentVel = bodies[5].velocity; } // Jupiter
+        else if (moon.name == "Titan" || moon.name == "Rhea" || moon.name == "Iapetus" || moon.name == "Dione" || moon.name == "Tethys" || moon.name == "Enceladus" || moon.name == "Mimas") { parentPos = bodies[6].position; parentVel = bodies[6].velocity; } // Saturn
+        else if (moon.name == "Miranda" || moon.name == "Ariel" || moon.name == "Umbriel" || moon.name == "Titania" || moon.name == "Oberon") { parentPos = bodies[7].position; parentVel = bodies[7].velocity; } // Uranus
+        else if (moon.name == "Triton") { parentPos = bodies[8].position; parentVel = bodies[8].velocity; } // Neptune
+
+        double theta = ((double) rand() / RAND_MAX) * 2 * M_PI;
+        Vec3 moonPos = {
+            parentPos.x + moon.distance * cos(theta),
+            parentPos.y + moon.distance * sin(theta),
+            parentPos.z
+        };
+
+        Vec3 moonVel = {
+            parentVel.x - moon.velocity * sin(theta),
+            parentVel.y + moon.velocity * cos(theta),
+            parentVel.z
+        };
+        bodies.push_back(Body{moon.name, moon.mass, moonPos, moonVel});
     }
+
 
     // --- Fill with random asteroids/comets ---
     size_t existingCount = bodies.size();
